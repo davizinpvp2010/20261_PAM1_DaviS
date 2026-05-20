@@ -33,6 +33,11 @@ class PaginaPrincipal extends StatelessWidget {
       drawer: const Drawer(
         child: Center(child: Text('Menu lateral')),
       ),
+      endDrawer: const Drawer(
+        child: Center(
+          child: Text('end drawer'),
+        )
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +51,7 @@ class PaginaPrincipal extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Casa'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favoritos'),
+          BottomNavigationBarItem(icon: Icon(Icons.airplane_ticket), label: 'Favoritos'),
         ],
       ),
     );
