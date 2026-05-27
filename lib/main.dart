@@ -38,11 +38,23 @@ class PaginaPrincipal extends StatelessWidget {
           child: Text('end drawer'),
         )
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          
-        ),
+      body: SingleChildScrollView(
+         padding: const EdgeInsets.all(20.0),
+         child: Column(
+
+          crossAxisAlignment:CrossAxisAlignment.center,
+          children: [
+
+            const CircleAvatar(
+              radius: 60,
+              backgroundColor: Colors.redAccent,
+              child: CircleAvatar(
+                radius: 56,
+                backgroundImage: NetworkImage(url),
+              )
+            )
+          ],
+         )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
