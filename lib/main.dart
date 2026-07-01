@@ -1,71 +1,50 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // Inicializa a execução do aplicativo chamando o widget principal
   runApp(const MyApp());
 }
 
-// ==========================================
-// CONFIGURAÇÃO INICIAL DO APLICATIVO (THEME)
-// ==========================================
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Configurações globais do aplicativo
-      debugShowCheckedModeBanner: false, // Oculta a tarja vermelha de "Debug" no canto da tela
-      home: const PaginaInicial(), // Define qual será a tela de abertura do app
+      debugShowCheckedModeBanner: false, // Remove a faixa de debug
+      home: const PaginaInicial(),
     );
   }
 }
 
-// ==========================================
-// TELA PRINCIPAL: ESTRUTURA DO CURRÍCULO
-// ==========================================
 class PaginaInicial extends StatelessWidget {
   const PaginaInicial({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // O Scaffold funciona como a "carcaça" ou esqueleto padrão do Material Design
     return Scaffold(
-      
-      // ----------------------------------------
-      // BARRA SUPERIOR (APPBAR)
-      // ----------------------------------------
+      // 1. Barra Superior
       appBar: AppBar(
-        title: const Text('ETEC Mongaguá - PAM I'), // Texto central da barra
-        backgroundColor: Colors.redAccent, // Cor de fundo principal do tema
-        centerTitle: true, // Garante a centralização do título em iOS e Android
-        elevation: 10, // Define a intensidade da sombra abaixo da barra
-        // Shape customiza as bordas da AppBar (neste caso, arredondando os cantos inferiores)
+        title: const Text('ETEC Mongaguá - PAM I'),
+        backgroundColor: const Color.fromARGB(255, 180, 45, 192),
+        centerTitle: true,
+        elevation: 10,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
         ),
       ),
 
-      // ----------------------------------------
-      // MENU LATERAL ESQUERDO (DRAWER)
-      // ----------------------------------------
+      // Menu Lateral Esquerdo (Navegação)
       drawer: const Drawer(
-        // Menu focado na navegação estrutural do sistema
-        child: Center(child: Text('Texto do Drawer (Menu)')),
+        child: Center(child: Text('Sou Estudando')),
       ),
 
-      // ----------------------------------------
-      // MENU LATERAL DIREITO (ENDDRAWER)
-      // ----------------------------------------
+      // Menu Lateral Direito (Configurações/Usuário)
       endDrawer: const Drawer(
-        // Menu focado em configurações, preferências e dados do usuário
-        child: Center(child: Text('Texto do EndDrawer (Configurações)')),
+        child: Center(child: Text('Muita coisa a Melhorar')),
       ),
 
-      // ----------------------------------------
-      // CORPO PRINCIPAL (BODY)
-      // ----------------------------------------
-      // Utiliza SingleChildScrollView para permitir a rolagem da tela caso o conteúdo ultrapasse a altura do dispositivo
+      // 2. Corpo do App
+// O body utiliza SingleChildScrollView para permitir a rolagem da tela caso o conteúdo ultrapasse a altura do dispositivo
       body: SingleChildScrollView( 
         // Adiciona um espaçamento interno de 20 pixels em todos os lados da tela
         padding: const EdgeInsets.all(20.0),
@@ -78,11 +57,11 @@ class PaginaInicial extends StatelessWidget {
             // 1. Foto de Perfil: Usa dois CircleAvatar sobrepostos para criar uma moldura circular
             const CircleAvatar(
               radius: 60, // Tamanho do círculo externo (moldura)
-              backgroundColor: Colors.redAccent, // Cor da moldura
+              backgroundColor: Color.fromARGB(255, 180, 45, 192), // Cor da moldura
               child: CircleAvatar(
                 radius: 56, // Tamanho do círculo interno (imagem)
                 // Busca a imagem de perfil diretamente de uma URL externa
-                backgroundImage: NetworkImage('https://github.com/diogenesllpereira.png'), 
+                backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd7VJthnsbi_22hKVF_yp0uSOdMp7zbUEjukZOtfNzLBgBJhyYFyv4KL0YXbYzGQGDandYrUI6Pa-tPayf6fgWBHlq4DhmIoz3eRcAk1uZ1A&s=10'), 
               ),
             ),
             
@@ -91,63 +70,61 @@ class PaginaInicial extends StatelessWidget {
 
             // 2. Nome e Idade: Widgets de texto com estilização diferenciada
             const Text(
-              'Diógenes Leandro Leite Pereira',
+              'Davi Silva de Albuquerque',
               textAlign: TextAlign.center, // Centraliza o texto
               style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold), // Fonte maior e negrito
             ),
             const Text(
-              '49 anos - Itanhaém, SP',
+              '16 anos - Praia Grande, SP',
               style: TextStyle(fontSize: 16, color: Colors.blueGrey), // Fonte menor com cor suave
             ),
             const SizedBox(height: 20),
 
             // 3. Contatos: Seção delimitada por linhas divisórias (Divider)
             const Divider(), // Linha horizontal separadora
-            // Chamadas ao método auxiliar para construir cada linha de contato de forma limpa
-            _buildContactItem(Icons.email, 'professor@etec.sp.gov.br'),
-            _buildContactItem(Icons.phone, '(13) 99999-9999'),
-            _buildContactItem(Icons.web, '@diogenesllpereira'),
+            // Chamadas ao método auxiliar para construir cada linha de contato
+            _buildContactItem(Icons.email, 'ds351045@gmail.com'),
+            _buildContactItem(Icons.phone, '(13) 97427-4026'),
+            _buildContactItem(Icons.web, '@davi_albxz'),
             const Divider(),
             const SizedBox(height: 20),
 
-            // 4. Resumo Profissional: Usa Align para garantir que o título fique alinhado à esquerda
+            // 4. Resumo Profissional: Usa Align para garantir que o título fique à esquerda
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 'Resumo Profissional',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.redAccent),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 180, 45, 192)),
               ),
             ),
             const SizedBox(height: 10),
             const Text(
-              'Professor de ensino técnico e superior com mais de 18 anos de experiência. Especialista em desenvolvimento Full-Stack e entusiasta de metodologias Clean Code.',
-              textAlign: TextAlign.justify, // Distribui o texto uniformemente nas laterais (justificado)
+              'Tenho formação tecnica em Desenvolvimento de Sistemas na Etec Adolpho Berezin, não tenho experiencia, tenho curso em desenho na casa da musica de itanhaem, sou responsável o eficiente',
+              textAlign: TextAlign.justify, // Distribui o texto uniformemente nas laterais
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 25),
 
-            // 5. Objetivo: Segue o mesmo padrão visual do resumo para manter a consistência do design
+            // 5. Objetivo: Segue o mesmo padrão visual do resumo para manter a consistência
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 'Objetivo',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.redAccent),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 180, 45, 192)),
               ),
             ),
             const SizedBox(height: 10),
             const Text(
-              'Atuar como Web Presence Provider e Instrutor de tecnologias modernas (Flutter, React Native, Laravel), ajudando alunos e empresas a alcançarem maturidade digital.',
+              'Ser alguem',
               textAlign: TextAlign.justify,
-              // Estilo em Itálico para destacar o objetivo profissional do restante do texto
+              // Itálico para dar ênfase ao objetivo profissional
               style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
             ),
           ],
         ),
       ),
 
-      // ----------------------------------------
-      // BARRA DE NAVEGAÇÃO INFERIOR (BOTTOMBAR)
-      // ----------------------------------------
+      // 3. Barra Inferior
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Início'),
@@ -155,40 +132,35 @@ class PaginaInicial extends StatelessWidget {
         ],
       ),
 
-      // ----------------------------------------
-      // BOTÃO FLUTUANTE (FLOATINGACTIONBUTTON)
-      // ----------------------------------------
+      // 4. Botão Flutuante (Ação Principal)
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Evento de clique disparado no console
+          // Ação executada ao clicar
           print('Botão Flutuante Pressionado!');
         },
-        backgroundColor: Colors.redAccent, // Combina com a cor da identidade da AppBar
+        backgroundColor: Color.fromARGB(255, 180, 45, 192),
         child: const Icon(Icons.add, color: Colors.white),
       ),
     );
   }
-
-  // ==========================================
-  // METODOS E FUNÇÕES AUXILIARES
-  // ==========================================
-  // Define uma função privada (_) que retorna um widget customizado.
-  // Serve para encapsular e padronizar as linhas de contato sem repetir código (Clean Code).
+// Define uma função (método) que retorna um widget, usada para criar linhas de contato padronizadas
   Widget _buildContactItem(IconData icone, String texto) {
     return Padding(
-      // Adiciona um pequeno espaçamento (respiro) de 5 pixels acima e abaixo de cada linha
+      // Adiciona um espaçamento (respiro) apenas na parte superior e inferior de cada linha
       padding: const EdgeInsets.symmetric(vertical: 5.0),
       child: Row(
-        // Organiza o Ícone e o Texto horizontalmente (lado a lado)
+        // Organiza os elementos (ícone e texto) horizontalmente
         children: [
-          // Exibe o ícone passado por parâmetro
-          Icon(icone, color: Colors.redAccent, size: 20),
+          // Exibe o ícone definido no parâmetro, usando a cor principal do nosso tema
+          Icon(icone, color: Color.fromARGB(255, 180, 45, 192), size: 20),
           
-          // Cria um bloco invisível com largura fixa de 15 pixels para afastar o texto do ícone
+          // Cria um espaço fixo de 15 pixels entre o ícone e o texto para não ficarem colados
           const SizedBox(width: 15),
           
-          // Exibe a string de texto recebida por parâmetro
+          // Exibe o conteúdo textual passado por parâmetro com um tamanho de fonte legível
           Text(texto, style: const TextStyle(fontSize: 16)),
         ],
       ),
     );
+  }
+}
