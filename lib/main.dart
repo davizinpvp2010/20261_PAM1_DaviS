@@ -25,7 +25,7 @@ class PaginaInicial extends StatelessWidget {
       // 1. Barra Superior
       appBar: AppBar(
         title: const Text('ETEC Mongaguá - PAM I'),
-        backgroundColor: const Color.fromARGB(255, 180, 45, 192),
+        backgroundColor: const Color.fromARGB(255, 110, 23, 23),
         centerTitle: true,
         elevation: 10,
         shape: const RoundedRectangleBorder(
@@ -35,7 +35,7 @@ class PaginaInicial extends StatelessWidget {
 
       // Menu Lateral Esquerdo (Navegação)
       drawer: const Drawer(
-        child: Center(child: Text('Sou Estudando')),
+        child: Center(child: Text('Sou estudante')),
       ),
 
       // Menu Lateral Direito (Configurações/Usuário)
@@ -57,11 +57,11 @@ class PaginaInicial extends StatelessWidget {
             // 1. Foto de Perfil: Usa dois CircleAvatar sobrepostos para criar uma moldura circular
             const CircleAvatar(
               radius: 60, // Tamanho do círculo externo (moldura)
-              backgroundColor: Color.fromARGB(255, 180, 45, 192), // Cor da moldura
+              backgroundColor: Color.fromARGB(255, 110, 23, 23), // Cor da moldura
               child: CircleAvatar(
                 radius: 56, // Tamanho do círculo interno (imagem)
                 // Busca a imagem de perfil diretamente de uma URL externa
-                backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd7VJthnsbi_22hKVF_yp0uSOdMp7zbUEjukZOtfNzLBgBJhyYFyv4KL0YXbYzGQGDandYrUI6Pa-tPayf6fgWBHlq4DhmIoz3eRcAk1uZ1A&s=10'), 
+                backgroundImage: NetworkImage('https://liquipedia.net/commons/images/0/0c/WR_Infobox_Aatrox.jpeg'), 
               ),
             ),
             
@@ -83,8 +83,8 @@ class PaginaInicial extends StatelessWidget {
             // 3. Contatos: Seção delimitada por linhas divisórias (Divider)
             const Divider(), // Linha horizontal separadora
             // Chamadas ao método auxiliar para construir cada linha de contato
-            _buildContactItem(Icons.email, 'ds351045@gmail.com'),
-            _buildContactItem(Icons.phone, '(13) 97427-4026'),
+            _buildContactItem(Icons.email, 'ds666666@gmail.com'),
+            _buildContactItem(Icons.phone, '(13) 6666-6666'),
             _buildContactItem(Icons.web, '@davi_albxz'),
             const Divider(),
             const SizedBox(height: 20),
@@ -94,12 +94,12 @@ class PaginaInicial extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 'Resumo Profissional',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 180, 45, 192)),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 110, 23, 23)),
               ),
             ),
             const SizedBox(height: 10),
             const Text(
-              'Tenho formação tecnica em Desenvolvimento de Sistemas na Etec Adolpho Berezin, não tenho experiencia, tenho curso em desenho na casa da musica de itanhaem, sou responsável o eficiente',
+              'Tenho formação tecnica em Desenvolvimento de Sistemas na Etec Adolpho Berezin, não sei ao certo oque quero da minha vida.',
               textAlign: TextAlign.justify, // Distribui o texto uniformemente nas laterais
               style: TextStyle(fontSize: 16),
             ),
@@ -110,7 +110,7 @@ class PaginaInicial extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 'Objetivo',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 180, 45, 192)),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 110, 23, 23)),
               ),
             ),
             const SizedBox(height: 10),
@@ -128,7 +128,7 @@ class PaginaInicial extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Início'),
-          BottomNavigationBarItem(icon: Icon(Icons.info), label: 'Sobre'),
+          BottomNavigationBarItem(icon: Icon(Icons.info), label: 'infos'),
         ],
       ),
 
@@ -138,8 +138,8 @@ class PaginaInicial extends StatelessWidget {
           // Ação executada ao clicar
           print('Botão Flutuante Pressionado!');
         },
-        backgroundColor: Color.fromARGB(255, 180, 45, 192),
-        child: const Icon(Icons.add, color: Colors.white),
+        backgroundColor: Color.fromARGB(255, 110, 23, 23),
+        child: const Icon(Icons.add, color: Color.fromARGB(255, 255, 0, 0)),
       ),
     );
   }
@@ -152,7 +152,7 @@ class PaginaInicial extends StatelessWidget {
         // Organiza os elementos (ícone e texto) horizontalmente
         children: [
           // Exibe o ícone definido no parâmetro, usando a cor principal do nosso tema
-          Icon(icone, color: Color.fromARGB(255, 180, 45, 192), size: 20),
+          Icon(icone, color: Color.fromARGB(255, 110, 23, 23), size: 20),
           
           // Cria um espaço fixo de 15 pixels entre o ícone e o texto para não ficarem colados
           const SizedBox(width: 15),
